@@ -41,4 +41,6 @@
 #include "Gwen/Controls/Layout/Position.h"
 #include "Gwen/Controls/Layout/Tile.h"
 
+#include "gwen/Controls/WindowControl.h"
+
 #endif
