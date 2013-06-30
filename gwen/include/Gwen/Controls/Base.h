@@ -369,10 +369,10 @@ namespace Gwen
 			public:
 
 				bool NeedsLayout() { return m_bNeedsLayout; }
-				void Invalidate();
+				virtual void Invalidate();
 				void InvalidateParent() { if ( m_Parent ) { m_Parent->Invalidate(); } }
-				void InvalidateChildren( bool bRecursive = false );
-				void Position( int pos, int xpadding = 0, int ypadding = 0 );
+				virtual void InvalidateChildren( bool bRecursive = false );
+				virtual void Position( int pos, int xpadding = 0, int ypadding = 0 );
 
 			protected:
 

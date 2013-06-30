@@ -41,16 +41,16 @@ namespace Gwen
 				virtual void SetClosable( bool closeable );
 
 				virtual void Touch();
-				bool IsOnTop();
+				virtual bool IsOnTop();
 
 				virtual void SetHidden( bool hidden );
 
 				void CloseButtonPressed();
 				void RenderFocus( Gwen::Skin::Base* skin );
-				void SetDeleteOnClose( bool b ) { m_bDeleteOnClose = b; }
+				virtual void SetDeleteOnClose( bool b ) { m_bDeleteOnClose = b; }
 
-				void MakeModal( bool bDrawBackground = true );
-				void DestroyModal();
+				virtual void MakeModal( bool bDrawBackground = true );
+				virtual void DestroyModal();
 
 				Gwen::Event::Caller	onWindowClosed;
 
