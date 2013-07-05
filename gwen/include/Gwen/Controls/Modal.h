@@ -19,6 +19,7 @@ namespace Gwen
 					SetMouseInputEnabled( true );
 					SetShouldDrawBackground( true );
 					SetBounds( 0, 0, GetParent()->Width(), GetParent()->Height() );
+					m_InnerBounds = m_Bounds;
 				}
 
 				virtual void Layout( Skin::Base* /*skin*/ )
