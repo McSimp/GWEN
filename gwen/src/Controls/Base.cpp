@@ -14,6 +14,7 @@
 #include "Gwen/DragAndDrop.h"
 #include "Gwen/ToolTip.h"
 #include "Gwen/Utility.h"
+#include "Gwen/Hook.h"
 #include <list>
 
 #ifndef GWEN_NO_ANIMATION
@@ -53,6 +54,8 @@ Base::Base( Base* pParent, const Gwen::String & Name )
 
 Base::~Base()
 {
+	Gwen::Hook::CallDestructorHook( this );
+
 	{
 		Canvas* canvas = GetCanvas();
 

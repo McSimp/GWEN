@@ -13,6 +13,7 @@ using namespace Gwen;
 using namespace Gwen::Hook;
 
 std::list<BaseHook*>	g_HookList;
+Gwen::Hook::tDestructorHook g_DestructorHook;
 
 void Gwen::Hook::AddHook( BaseHook* pHook )
 {
@@ -27,6 +28,19 @@ void Gwen::Hook::RemoveHook( BaseHook* pHook )
 HookList & Gwen::Hook::GetHookList()
 {
 	return g_HookList;
+}
+
+void Gwen::Hook::SetDestructorHook( tDestructorHook f )
+{
+	g_DestructorHook = f;
+}
+
+void Gwen::Hook::CallDestructorHook( Gwen::Controls::Base* control )
+{
+	if (g_DestructorHook != nullptr)
+	{
+		g_DestructorHook(control);
+	}
 }
 
 #endif

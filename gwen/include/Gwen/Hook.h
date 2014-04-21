@@ -25,6 +25,7 @@ namespace Gwen
 		};
 
 		typedef std::list<BaseHook*> HookList;
+		typedef void (*tDestructorHook) (Controls::Base*);
 
 		GWEN_EXPORT HookList & GetHookList();
 
@@ -74,6 +75,9 @@ namespace Gwen
 
 			return false;
 		}
+
+		GWEN_EXPORT void SetDestructorHook(tDestructorHook f);
+		void CallDestructorHook( Controls::Base* control );
 	}
 
 }
